@@ -14,14 +14,17 @@ namespace CU.Logic.Graphics
         public int[] Pixel { get; set; }
 
         public Canvas(int Height, int Width)
-        { 
-            _height = Height;
-            _width = Width;
-
+        {
             if (Width! > 0 || Height! > 0)
             {
                 _height = 30;
                 _width = 90;
+            }
+            else
+            {
+                _height = Height;
+                _width = Width;
+
             }
 
             _pixelElements = _height * _width;

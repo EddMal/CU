@@ -348,7 +348,7 @@ namespace PixelDraw // V.2.9.1
                     default:
                         break;
                 }
-                // Due to a pixels nature on canvas occypies 2 chars in width 2x store background
+                // Due to a pixels nature on canvas occupies 2 chars in width 2x store background
                 // color of pixel element. Move to other/new method.(ev. in DisplayPixel)
                 PixelDrawProgram.Pixels[(Y * Canvas.Width) + X] = (int)Console.BackgroundColor;
                 PixelDrawProgram.Pixels[(Y * Canvas.Width) + (X + 1)] = (int)Console.BackgroundColor;
