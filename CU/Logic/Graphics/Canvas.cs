@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace CU.Logic.Graphics
 {
     public class Canvas
     {
-        private int _width {get; init;} /* = 90;*/
-        private int _height { get; init;}  /*_height = 30;*/
-        private int _pixelElements { get; init; }  // Height*Width.
+        public int _width {get; init;} /* = 90;*/
+        public int _height { get; init;}  /*_height = 30;*/
+        public int _pixelElements { get; init; }  // Height*Width.
         public int[] Pixel { get; set; }
 
         public Canvas(int Height, int Width)

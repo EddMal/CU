@@ -9,13 +9,20 @@ namespace CU.Logic.Graphics
 {
     public class FileData
     {
+        private string _filePath{ get; init; }
+
+        public FileData(string FilePath)
+        {
+            _filePath = FilePath;
+        }
+
         // Save painting
-        public static void SaveToFile()
+        public static void SaveToFile(int PixelElements)
         {
             //Convert Pixels int array to string array.
             StringBuilder StringBuilderPixels = new StringBuilder();
 
-            for (int i = 0; i < Canvas.PixelElements; i++)
+            for (int i = 0; i < PixelElements; i++)
             {
                 if (i > 0)
                 {
@@ -34,12 +41,9 @@ namespace CU.Logic.Graphics
         }
 
         // Load painting.
-        public static void LoadFromFile()
+        public int[] LoadFromFile()
         {
-            String StringPixels = File.ReadAllText(PixelDrawProgram.FilePath);
-            //Program.Pixels.ConvertAll<string, int>(StringPixels.Split(','), Convert.ToInt32);
-            //Program.Pixels= JsonConvert.DeserializeObject<int[]>(StringPixels); //ConvertAll(StringPixels.Split(","), int.Parse);
-            //text.Split(';').Select(n => Convert.ToInt32(n)).ToArray();
+            String StringPixels = File.ReadAllText(_filePath);
 
             //https://stackoverflow.com/questions/1763613/convert-comma-separated-string-of-ints-to-int-array
             List<int> myIntegers = new List<int>();
@@ -49,7 +53,7 @@ namespace CU.Logic.Graphics
                 if (Int32.TryParse(s, out currentInt))
                     myIntegers.Add(currentInt);
             });
-            PixelDrawProgram.Pixels = myIntegers.ToArray();
+            return myIntegers.ToArray();
 
         }
     }
