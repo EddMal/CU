@@ -1,8 +1,12 @@
-﻿namespace CU
+﻿using CU.Test;
+namespace CU
 {
-    internal class Program
+    public class Program
     {
-       
+        public static void Main()
+        {
+            CU.Test.Test.TestWriteToFile();
+        }
     }
 }
 

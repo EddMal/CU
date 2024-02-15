@@ -1,5 +1,4 @@
-﻿using PixelDraw;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,7 +16,7 @@ namespace CU.Logic.Graphics
         }
 
         // Save painting
-        public static void SaveToFile(int PixelElements)
+        public void SaveToFile(int PixelElements, int[] Pixels)
         {
             //Convert Pixels int array to string array.
             StringBuilder StringBuilderPixels = new StringBuilder();
@@ -28,13 +27,13 @@ namespace CU.Logic.Graphics
                 {
                     StringBuilderPixels.Append(",");
                 }
-                StringBuilderPixels.Append(PixelDrawProgram.Pixels[i]);
+                StringBuilderPixels.Append(Pixels[i]);
             }
 
             String StringPixels = StringBuilderPixels.ToString();
 
 
-            System.IO.File.WriteAllText(PixelDrawProgram.FilePath, StringPixels);
+            System.IO.File.WriteAllText(_filePath, StringPixels);
 
 
 

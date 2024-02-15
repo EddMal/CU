@@ -1,5 +1,4 @@
-﻿using PixelDraw;
-using static CU.Logic.Grapics.Draw;
+﻿using static CU.Logic.Grapics.Draw;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +18,7 @@ namespace CU.Logic.Graphics
 
         /* Method MoveCursor inside of class User, enables
            * the user to move the cursor over the canvas.*/
-        public (int X, int Y) MoveCursor(int X, int Y,int SelectedPixelColor)
+        public (int X, int Y) MoveCursor(int X, int Y,int SelectedPixelColor, int[] CanvasPixelData)
         {
             //Evaluate to find a more optimized way to handle assigning of Program.Pixel
             // this metod is about to be overloaded with code.
@@ -58,8 +57,8 @@ namespace CU.Logic.Graphics
                 }
                 // Due to a pixels nature on canvas occupies 2 chars in width 2x store background
                 // color of pixel element. Move to other/new method.(ev. in DisplayPixel)
-                PixelDrawProgram.Pixels[(Y * _canvas._width) + X] = (int)Console.BackgroundColor;
-                PixelDrawProgram.Pixels[(Y * _canvas._width) + (X + 1)] = (int)Console.BackgroundColor;
+                CanvasPixelData[(Y * _canvas._width) + X] = (int)Console.BackgroundColor;
+                CanvasPixelData[(Y * _canvas._width) + (X + 1)] = (int)Console.BackgroundColor;
                 DisplayPixel(X, Y);
             } while (keyInfo.Key != (ConsoleKey)InputKeys.Action.Paint);
 
