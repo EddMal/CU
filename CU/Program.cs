@@ -6,6 +6,7 @@ namespace CU
         public static void Main()
         {
             CU.Test.Test.TestWriteToFile();
+            CU.Test.Test.TestReadFromFile();
         }
     }
 }

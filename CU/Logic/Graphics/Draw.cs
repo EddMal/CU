@@ -29,6 +29,7 @@ namespace CU.Logic.Grapics
             _canvas = canvas;
         }
 
+        //Handle SelectedPixelColor
         public void DisplayCursor(int X, int Y)
         {
             Console.CursorVisible = false;
